@@ -11,7 +11,8 @@ app.directive('pending', function() {
 			
 			elem.bind('click', function() {
 				elem.prop('disabled', true);
-				// console.log(scope);
+				
+				//scope.request().then(function(data) {});
 			});
 
 		}

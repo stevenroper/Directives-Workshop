@@ -2,6 +2,7 @@
 <html ng-app="directiveWorkshop">
 <head>
 	<title>My Directives</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 <body ng-controller="mainCtrl">
 
@@ -9,7 +10,8 @@
 		<h2>pending</h2>
 		<form>
 			<input ng-model='query' placeholder="Search"/>
-			<button pending request="getData()" search-term='query'>Submit</button> 
+			<button pending request="getData()" search-term='query'>Submit</button>
+			<span class='fa fa-spinner fa-spin'></span>
 		</form>
 	</div>
 
