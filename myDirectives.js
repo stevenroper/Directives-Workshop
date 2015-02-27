@@ -8,10 +8,10 @@ app.directive('pending', function() {
 			searchTerm: '='
 		},
 		link: function(scope, elem, attrs) {
-			console.log(scope.searchTerm);
+			
 			elem.bind('click', function() {
 				elem.prop('disabled', true);
-				console.log(scope.searchTerm)
+				// console.log(scope);
 			});
 
 		}
