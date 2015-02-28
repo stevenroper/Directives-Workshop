@@ -13,7 +13,10 @@ app.directive('pending', function() {
 				elem.prop('disabled', true);
 				angular.element('#spinner').show();
 				scope.request().then(function(data) {
-					console.log(data);
+					elem.prop('disabled', false);
+					angular.element('#spinner').hide();
+					scope.searchTerm = '';
+					console.log(data.data.results);
 				});
 			});
 
