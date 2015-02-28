@@ -24,3 +24,27 @@ app.directive('pending', function() {
 	}
 
 });
+
+app.directive('notify', function() {
+	return {
+		restrict: 'A',
+		scope: {
+			title: '=',
+			body: '=',
+			iconUrl: '='
+		},
+		link: function(scope, elem, attrs) {
+			var Notification = window.Notification || window.mozNotification || window.webkitNotification;
+  		Notification.requestPermission(function (permission) {
+				//console.log(permission);
+      });
+
+			elem.bind('click', function() {
+				var notifcication = new Notification(scope.title, {body: scope.body, icon: scope.iconUrl});
+				scope.title = '';
+				scope.body = '';
+				scope.iconUrl = '';
+			});
+		}
+	};
+});
