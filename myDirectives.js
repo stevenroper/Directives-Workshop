@@ -11,8 +11,10 @@ app.directive('pending', function() {
 			
 			elem.bind('click', function() {
 				elem.prop('disabled', true);
-				
-				//scope.request().then(function(data) {});
+				angular.element('#spinner').show();
+				scope.request().then(function(data) {
+					console.log(data);
+				});
 			});
 
 		}
